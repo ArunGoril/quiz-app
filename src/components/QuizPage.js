@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useRef, useState } from 'react'
 import { QuizData } from '../data/QuizData'
 import OptionComponent from './OptionComponent'
 import QuestionComponent from './QuestionComponent'
@@ -6,6 +7,7 @@ import QuizResult from './QuizResult'
 import WheelButton from './WheelButton'
 
 const QuizPage = () => {
+    // const [QuizData, setQuizData] = useState([])
     const [currentQuestion, setCurrentQuestion] = useState(1)
     const [score, setScore] = useState(0)
     const [selectedOption, setSelectedOption] = useState(0)
@@ -16,6 +18,16 @@ const QuizPage = () => {
     const [isCorrect, setIsCorrect] = useState(null)
     const ballRef = useRef()
     const optionsContainerRef = useRef()
+
+    useEffect(()=>{
+        const fetchData = async () => {
+            const res = await axios.get("http://localhost:9002/api/quiz")
+            const data = await res.data
+            // console.log(data)
+            // setQuizData(data)
+        }
+        fetchData()
+    }, [])
 
     const handleSelectOption = (optionNo) => {
         setSelectedOption(optionNo);
