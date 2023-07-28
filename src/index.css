@@ -48,7 +48,7 @@ code {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   transform: rotate(180deg);
   /* margin-top: 100px; */
-  left: 60px;
+  left: 63px;
 }
 
 .half-circle-button {
@@ -83,6 +83,18 @@ code {
   bottom: 30px;
   color: #6b4c8c;
   background-color: #fff;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  /* background-color: orange; */
+  border-radius: 50%;
+  position: absolute;
+  /* right: 50%; */
+  left: 50%;
+  bottom: 35px;
+  transition: transform 1s ease-in-out;
 }
 
 @media (max-width: 576px) {
