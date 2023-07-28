@@ -11,3 +11,83 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.optionContainer {
+  height: 150px;
+}
+
+.page-bg {
+  background-color: #592693;
+  height: 100vh;
+}
+
+.card-bg {
+  background-color: #6b4c8c;
+}
+
+.question-color {
+  color: #6b4c8c;
+}
+
+.checked {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.knob {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #007bff;
+  position: relative;
+  margin-bottom: -25px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #007bff 50%, transparent 50%);
+  background-clip: padding-box;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  transform: rotate(180deg);
+  /* margin-top: 100px; */
+  left: 60px;
+}
+
+.half-circle-button {
+  width: 100px;
+  height: 50px;
+  background-color: #007bff;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  position: relative;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-container {
+  height: 100vh;
+  position: relative;
+}
+
+.wheel-container {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.skip-button {
+  position: absolute;
+  right: 0px;
+  bottom: 30px;
+  color: #6b4c8c;
+  background-color: #fff;
+}
+
+@media (max-width: 576px) {
+  .optionContainer {
+    height: 100px;
+    font-size: 10px;
+  }
+}
