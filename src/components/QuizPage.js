@@ -19,15 +19,15 @@ const QuizPage = () => {
     const ballRef = useRef()
     const optionsContainerRef = useRef()
 
-    useEffect(()=>{
-        const fetchData = async () => {
-            const res = await axios.get("http://localhost:9002/api/quiz")
-            const data = await res.data
-            // console.log(data)
-            // setQuizData(data)
-        }
-        fetchData()
-    }, [])
+    // useEffect(()=>{
+    //     const fetchData = async () => {
+    //         const res = await axios.get("http://localhost:9002/api/quiz")
+    //         const data = await res.data
+    //         console.log(data)
+    //         setQuizData(data)
+    //     }
+    //     fetchData()
+    // }, [])
 
     const handleSelectOption = (optionNo) => {
         setSelectedOption(optionNo);
@@ -61,6 +61,7 @@ const QuizPage = () => {
             setBallPosition({x: 0, y: 0})
             setButtonClicked(false)
             setIsCorrect(null)
+            setKnobRotation(0)
         }, 1500)
     }
 
@@ -68,6 +69,7 @@ const QuizPage = () => {
         if (currentQuestion < QuizData.length) {
             setCurrentQuestion(prevQuestion => prevQuestion + 1)
             setSelectedOption(0)
+            setKnobRotation(0)
             setButtonClicked(false)
             setIsCorrect(null)
         } else {
@@ -89,6 +91,7 @@ const QuizPage = () => {
         setScore(0)
         setSelectedOption(0)
         setShowResult(false)
+        setKnobRotation(0)
         setKnobRotation(0)
         setBallPosition({x: 0, y: 0})
         setButtonClicked(false)
